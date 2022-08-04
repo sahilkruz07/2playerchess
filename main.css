@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*
+.white{
+    background-color: #E3C39F;
+}
+
+.black{
+    background-color: #95632C;
+}
+*/
+.piece{
+    width: 5vw;
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .chessboard{
+    box-shadow: 0 0 1vw #4f4f4f;
+} */
+
+.piece:hover{
+    background-color: #98f8a8;
+}
+
+img{
+    width: 4.25vw;
+    height: 4.25vw;
+    object-fit: cover;
+}
+.notes{
+    position:absolute;
+    top:2.75vw;
+    left:24vw;
+}
+.box{
+    width:5vw;
+    height:5vw;
+    background : transparent;
+    font-size: 1.5vw;
+    padding:2vw 3.4vw;
+}
+.box1{
+    width:5vw;
+    height:2.5vw;
+    background : transparent;
+    font-size: 1.5vw;
+    padding:0.4vw 2vw;
+    float : left;
+}
+.notes1{
+    position:absolute;
+    bottom:0.3vw;
+    left:30vw;
+}

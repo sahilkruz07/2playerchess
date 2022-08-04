@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CHESS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='generateBoard.js'></script>
+    <script src='main.js'></script>
+    <script src='getPiece.js'></script>
+    <script src='showTiles.js'></script>
+    <script src='diag.js'></script>
+    
+</head>
+<body>
+
+    <div class="notes">
+        <div class="box">8</div>
+        <div class="box">7</div>
+        <div class="box">6</div>
+        <div class="box">5</div>
+        <div class="box">4</div>
+        <div class="box">3</div>
+        <div class="box">2</div>
+        <div class="box">1</div>
+    </div>
+
+    <div class="notes1">
+        <div class="box1">a</div>
+        <div class="box1">b</div>
+        <div class="box1">c</div>
+        <div class="box1">d</div>
+        <div class="box1">e</div>
+        <div class="box1">f</div>
+        <div class="box1">g</div>
+        <div class="box1">h</div>
+    </div>
+    <div class="container">
+        <div class="chessboard">
+            <div class="flex">
+                <div class=" piece" onclick = "getPiece('a8')"  id="a8"></div>
+                <div class=" piece" onclick = "getPiece('b8')"  id="b8"></div>
+                <div class=" piece" onclick = "getPiece('c8')"  id="c8"></div>
+                <div class=" piece" onclick = "getPiece('d8')"  id="d8"></div>
+                <div class=" piece" onclick = "getPiece('e8')"  id="e8"></div>
+                <div class=" piece" onclick = "getPiece('f8')"  id="f8"></div>
+                <div class=" piece" onclick = "getPiece('g8')"  id="g8"></div>
+                <div class=" piece" onclick = "getPiece('h8')"  id="h8"></div>
+            </div>
+            <div class="flex">
+                <div class=" piece" onclick = "getPiece('a7')"  id="a7"></div>
+                <div class=" piece" onclick = "getPiece('b7')"  id="b7"></div>
+                <div class=" piece" onclick = "getPiece('c7')"  id="c7"></div>
+                <div class=" piece" onclick = "getPiece('d7')"  id="d7"></div>
+                <div class=" piece" onclick = "getPiece('e7')"  id="e7"></div>
+                <div class=" piece" onclick = "getPiece('f7')"  id="f7"></div>
+                <div class=" piece" onclick = "getPiece('g7')"  id="g7"></div>
+                <div class=" piece" onclick = "getPiece('h7')"  id="h7"></div>
+            </div>
+            <div class="flex">
+                <div class=" piece" onclick = "getPiece('a6')"  id="a6"></div>
+                <div class=" piece" onclick = "getPiece('b6')"  id="b6"></div>
+                <div class=" piece" onclick = "getPiece('c6')"  id="c6"></div>
+                <div class=" piece" onclick = "getPiece('d6')"  id="d6"></div>
+                <div class=" piece" onclick = "getPiece('e6')"  id="e6"></div>
+                <div class=" piece" onclick = "getPiece('f6')"  id="f6"></div>
+                <div class=" piece" onclick = "getPiece('g6')"  id="g6"></div>
+                <div class=" piece" onclick = "getPiece('h6')"  id="h6"></div>
+            </div>
+            <div class="flex">
+                <div class=" piece" onclick = "getPiece('a5')"  id="a5"></div>
+                <div class=" piece" onclick = "getPiece('b5')"  id="b5"></div>
+                <div class=" piece" onclick = "getPiece('c5')"  id="c5"></div>
+                <div class=" piece" onclick = "getPiece('d5')"  id="d5"></div>
+                <div class=" piece" onclick = "getPiece('e5')"  id="e5"></div>
+                <div class=" piece" onclick = "getPiece('f5')"  id="f5"></div>
+                <div class=" piece" onclick = "getPiece('g5')"  id="g5"></div>
+                <div class=" piece" onclick = "getPiece('h5')"  id="h5"></div>
+            </div>
+            <div class="flex">
+                <div class=" piece" onclick = "getPiece('a4')"  id="a4"></div>
+                <div class=" piece" onclick = "getPiece('b4')"  id="b4"></div>
+                <div class=" piece" onclick = "getPiece('c4')"  id="c4"></div>
+                <div class=" piece" onclick = "getPiece('d4')"  id="d4"></div>
+                <div class=" piece" onclick = "getPiece('e4')"  id="e4"></div>
+                <div class=" piece" onclick = "getPiece('f4')"  id="f4"></div>
+                <div class=" piece" onclick = "getPiece('g4')"  id="g4"></div>
+                <div class=" piece" onclick = "getPiece('h4')"  id="h4"></div>
+            </div>
+            <div class="flex">
+                <div class=" piece" onclick = "getPiece('a3')"  id="a3"></div>
+                <div class=" piece" onclick = "getPiece('b3')"  id="b3"></div>
+                <div class=" piece" onclick = "getPiece('c3')"  id="c3"></div>
+                <div class=" piece" onclick = "getPiece('d3')"  id="d3"></div>
+                <div class=" piece" onclick = "getPiece('e3')"  id="e3"></div>
+                <div class=" piece" onclick = "getPiece('f3')"  id="f3"></div>
+                <div class=" piece" onclick = "getPiece('g3')"  id="g3"></div>
+                <div class=" piece" onclick = "getPiece('h3')"  id="h3"></div>
+            </div>
+            <div class="flex">
+                <div class=" piece" onclick = "getPiece('a2')"  id="a2"></div>
+                <div class=" piece" onclick = "getPiece('b2')"  id="b2"></div>
+                <div class=" piece" onclick = "getPiece('c2')"  id="c2"></div>
+                <div class=" piece" onclick = "getPiece('d2')"  id="d2"></div>
+                <div class=" piece" onclick = "getPiece('e2')"  id="e2"></div>
+                <div class=" piece" onclick = "getPiece('f2')"  id="f2"></div>
+                <div class=" piece" onclick = "getPiece('g2')"  id="g2"></div>
+                <div class=" piece" onclick = "getPiece('h2')"  id="h2"></div>
+            </div>
+            <div class="flex">
+                <div class=" piece" onclick = "getPiece('a1')"  id="a1"></div>
+                <div class=" piece" onclick = "getPiece('b1')"  id="b1"></div>
+                <div class=" piece" onclick = "getPiece('c1')"  id="c1"></div>
+                <div class=" piece" onclick = "getPiece('d1')"  id="d1"></div>
+                <div class=" piece" onclick = "getPiece('e1')"  id="e1"></div>
+                <div class=" piece" onclick = "getPiece('f1')"  id="f1"></div>
+                <div class=" piece" onclick = "getPiece('g1')"  id="g1"></div>
+                <div class=" piece" onclick = "getPiece('h1')"  id="h1"></div>
+            </div>
+    
+        </div>
+    </div> 
+
+    <script src='generateBoard.js'></script>
+    <script src='main.js'></script>   
+    <script src='getPiece.js'></script>
+    <script src='showTiles.js'></script>
+    <script src='diag.js'></script>
+
+</body>
+</html>
