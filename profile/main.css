@@ -219,3 +219,9 @@ a{
     height: 5vh;
     cursor: pointer;
 }
+
+.profile-container{
+    width: 40vw;
+    height: 70vh;
+    background-color: red;
+}

@@ -1,91 +1,51 @@
-var chess = [
-    [-2,-3,-4,-5,-6,-4,-3,-2],
-    [-1,-1,-1,-1,-1,-1,-1,-1],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 1, 1, 1, 1, 1, 1, 1, 1],
-    [ 2, 3, 4, 5, 6, 4, 3, 2]
+var data = [
+    [1,'Faded','Alan Walker'],
+    [2,'Believer','Imagine Dragons'],
+    [3,'Shape of You','Ed Sheeran']
 ]
 
-var current  =  0;
-var currentPiece = 0;
-var previousX = 0;
-var previousY = 0;
+var curr = 1;
+var song_mp3 = new Audio('songs/1.mp3');
+var song_poster;
+var song_name;
+var song_artist;
+var isPlaying = false;
 
-var active = [
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-]
+function song_play(song_id){
+    song_mp3.pause();
+    curr = song_id;
+    isPlaying = true;
+    song_mp3 = new Audio('songs/'+ song_id +'.mp3');
+    song_mp3.play();
+    song_poster = document.querySelector('#song_poster');
+    song_poster.innerHTML = '<img src="poster/'+song_id+'.png">';
+    song_name = document.querySelector('#song_name');
+    song_name.innerHTML = data[song_id - 1][1];
+    song_artist = document.querySelector('#song_artist');
+    song_artist.innerHTML = data[song_id - 1][2];
 
-var col = ['a','b','c','d','e','f','g','h'];
-var row = ['8','7','6','5','4','3','2','1'];
-
-
-function setActive()
-{
-    active = [
-        [ 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0],
-        [ 0, 0, 0, 0, 0, 0, 0, 0],
-    ]
 }
 
-generateBoard()
+function song_pause(){
+    if(isPlaying == false){
+        song_mp3.play();
+        isPlaying = true;
+    }
+    else{
+        song_mp3.pause();
+        isPlaying = false;
+    }
+}
 
-var newMatrix = [
-    [ 00, 01, 02, 03, 04, 05, 06, 07],
-    [ 10, 11, 12, 13, 14, 15, 16, 17],
-    [ 20, 21, 22, 23, 24, 25, 26, 27],
-    [ 30, 31, 32, 33, 34, 35, 36, 37],
-    [ 40, 41, 42, 43, 44, 45, 46, 47],
-    [ 50, 51, 52, 53, 54, 55, 56, 57],
-    [ 60, 61, 62, 63, 64, 65, 66, 67],
-    [ 70, 71, 72, 73, 74, 75, 76, 77]
-]    
+function song_repeat(){
+    song_mp3.pause();
+    song_mp3.currentTime = 0;
+    song_mp3.play();
+}
 
-var newMatrixSum = [
-    [ 0, 1, 2, 3, 4, 5, 6, 7],
-    [ 1, 2, 3, 4, 5, 6, 7, 8],
-    [ 2, 3, 4, 5, 6, 7, 8, 9],
-    [ 3, 4, 5, 6, 7, 8, 9,10],
-    [ 4, 5, 6, 7, 8, 9,10,11],
-    [ 5, 6, 7, 8, 9,10,11,12],
-    [ 6, 7, 8, 9,10,11,12,13],
-    [ 7, 8, 9,10,11,12,13,14]
-]    
+function song_skip(){
+    song_mp3.pause();
+    song_mp3.currentTime += 5;
+    song_mp3.play();
+}
 
-var newMatrixSub = [
-    [ 0,-1,-2,-3,-4,-5,-6,-7],
-    [ 1, 0,-1,-2,-3,-4,-5,-6],
-    [ 2, 1, 0,-1,-2,-3,-4,-5],
-    [ 3, 2, 1, 0,-1,-2,-3,-4],
-    [ 4, 3, 2, 1, 0,-1,-2,-3],
-    [ 5, 4, 3, 2, 1, 0,-1,-2],
-    [ 6, 5, 4, 3, 2, 1, 0,-1],
-    [ 7, 6, 5, 4, 3, 2, 1, 0]
-]   
-
-
-var chess1 = [
-    [-2,-3,-4,-5,-6,-4,-3,-2],
-    [-1,-1,-1,-1,-1,-1,-1,-1],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 0, 0, 0, 0, 0, 0, 0, 0],
-    [ 1, 1, 1, 1, 1, 1, 1, 1],
-    [ 2, 3, 4, 5, 6, 4, 3, 2]
-]
